@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>Hello, WebVR! - A-Frame</title>
+    <meta name="description" content="Hello, WebVR! - A-Frame">
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/oscarmarinmiro/aframe-video-controls/master/dist/aframe-video-controls.min.js"></script>
+    <script src="https://rawgit.com/ngokevin/aframe-animation-component/master/dist/aframe-animation-component.min.js"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-98212854-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+</head>
+<body>
+<a-scene>
+        <a-assets>
+            <video id="Shop" autoplay loop="true" src="StoreVideo.mp4"></video>
+        </a-assets>
+
+
+    <a-camera position="0 0 4">
+        <a-cursor id="cursor" color="yellow"></a-cursor>
+    </a-camera>
+
+
+    <a-video src="#Shop" width="16" height="9" position="0 0 -4"></a-video>
+
+    <a-entity video-controls="src:#Shop" scale ="3 3 3" ></a-entity>
+
+
+</a-scene>
+</body>
+</html>

@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Hello, World! • A-Frame</title>
+    <meta name="description" content="Hello, World! • A-Frame">
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-layout-component@4.0.1/dist/aframe-layout-component.min.js"></script>
+    <script src="camera.js"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-98212854-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+    <script>
+        var m = document.getElementById('modal');
+        var b = document.getElementById('openIframe');
+        var i = document.getElementById('iframeid');
+        var x = document.getElementById('closebtn');
+
+        x.addEventListener("click",function(){
+            m.style.display = "none"
+        })
+        b.addEventListener("click",function(){
+            console.log('dsadas')
+            i.src = "http://test.com"
+            m.style.display = "block";
+
+        })
+    </script>
+
+    <script>
+        function toggleChat() {
+            // get the chat
+            var myChat = document.getElementById('content');
+
+            // get the current value of the chat's display property
+            var displaySetting = myChat.style.display;
+
+            // also get the chat button, so we can change what it says
+            var chatButton = document.getElementById('button1');
+
+            // now toggle the chat and the button text, depending on current state
+            if (displaySetting == 'block') {
+                // chat is visible. hide it
+                myChat.style.display = 'none';
+                // change button text
+                chatButton.innerHTML = 'Show chat';
+            }
+            else {
+                // clock is hidden. show it
+                myChat.style.display = 'block';
+                // change button text
+                chatButton.innerHTML = 'Hide chat';
+            }
+        }  </script>
+
+    <style>
+        html, body, div, #myEmbededScene {
+            background-color: transparent;
+        }
+        video, img {
+            width: 100%    !important;
+            max-width: 100%    !important;
+            height: auto   !important;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1000;
+        }
+        .coords {
+            position: absolute;
+            top: 0.1rem;
+            left: 0.1rem;
+            background-color: silver;
+            opacity: 0.5;
+            color: #fff;
+        }
+        .glow {
+            background: #527fa9;
+            box-shadow: inset 0 0 30px 15px #49628a;
+            transition: 500ms ease-in-out;
+        }
+        .button {
+            Position: absolute;
+            top: 88%;
+            left: 80%;
+            background-color: #555555; /* Green */
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .button1 {
+            background-color: white;
+            color: black;
+            border: 2px solid #555555;
+            z-index: 1;
+        }
+
+        .button1:hover {
+            background-color: #555555;
+            color: white;
+        }
+        div#content {
+            position: absolute;
+            top: 20%;
+            left: 70%;
+            bottom: 25px;
+            min-width: 50px;
+            overflow: hidden;
+            margin-top: -10%;
+            margin-bottom: 10%;
+            margin-right: 5%;
+            width: 30%;
+            background: black;
+            z-index: 1;
+            display: none;
+
+        }
+
+        div#content iframe {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+
+        }
+    </style>
+</head>
+<body>
+
+<button onclick="toggleChat()" class="button button1">Chat</button>
+
+<div id="content">
+    <iframe src="web-start/index.html" name="frame2" id="frame2"
+            frameborder="0" marginwidth="0" marginheight="0"
+            scrolling="auto" onload="" allowtransparency="false"></iframe>
+</div>
+
+<!--<div id="buyItem1">-->
+<!--<embed src ="https://www.plazmalab.com/product-23137-Sacred_Geo_poster.aspx" width="80%%" height="60%%" />-->
+<!--<iframe id="framed" src="https://www.plazmalab.com/product-23137-Sacred_Geo_poster.aspx#Main_productPanel1"></iframe>-->
+<!--</div>-->
+<div id="myEmbededScene" class="scene">
+<a-scene>
+
+    <!--
+    <a-sphere position="0 1.25 -2" radius="1.25" color="#EF2D5E"></a-sphere>
+    <a-box position="-1 0.5 0" rotation="0 45 0" width="1" height="1" depth="1"  color="#4CC3D9"></a-box>
+    <a-cylinder position="1 0.75 -1" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+    <a-plane rotation="-90 0 0" position="0 0 -2" width="4" height="4" color="#7BC8A4"></a-plane>
+    -->
+
+    <assets>
+        <img id="img1" src="img/01-Shibortal.jpg">
+        <img id="img2" src="img/2-SAVAGE-BACK.jpg">
+        <img id="img3" src="img/BabylonFront.jpg">
+        <img id="img4" src="img/Comfort.jpg">
+        <img id="img5" src="img/Festivity.jpg">
+        <img id="img6" src="img/Daysaver.jpg">
+        <img id="img7" src="img/FirmaDrip.jpg">
+        <img id="img8" src="img/Marshmallows.jpg">
+        <img id="img9" src="img/LoveMeditation.jpg">
+        <img id="img10" src="img/MemoryContrast.jpg">
+        <img id="img11" src="img/Mistic.jpg">
+        <img id="img12" src="img/Molotov.jpg">
+        <img id="img13" src="img/BUY.png">
+        <a-asset-item id="shirt" src="models/3d-models.dae"></a-asset-item>
+
+    </assets>
+
+
+
+
+
+    <a-entity layout="type: circle; radius: 17" position="0 -4 0">
+        <!--image1-->
+        <a-image type="button" onclick="toggleItem1()" src ="img/01-Shibortal.jpg"
+                 width="2.3" height="3.3" scale ="2.5 2.5 2.5" rotation="25 90 0"
+                 data-interactive="true">
+            <a-animation attribute="scale" begin="mouseenter" dur="1000" to="4 4 4" ></a-animation>
+            <a-animation attribute="scale" begin="mouseleave" dur="1000" to="2.5 2.5 2.5"></a-animation>
+            <a-animation attribute="position" from="17 -3 0" to="17 -5 0" direction="alternate" dur="2000"
+                         repeat="indefinite" dur="4000"></a-animation>
+            <!-- <a-animation attribute="material.color" from="white" to="green" dur="1000" begin="click"></a-animation>
+             <a-animation attribute="material.color" from="green" to="white" dur="1000" begin="mouseleave"></a-animation>
+            -->
+        </a-image>
+
+        <!--image 2-->
+
+        <a-image type="button" onclick="toggleItem1()" geometry="primitive: plane" src ="#img2" width="1.5" height="2.4" data-interactive="true"
+                 scale ="3 3 2.3" rotation="25 30 0">
+            <a-animation attribute="scale" begin="mouseenter" dur="1000" to="4 4 4"></a-animation>
+            <a-animation attribute="scale" begin="mouseleave" dur="1000" to="3 3 2.3"></a-animation>
+
+            <a-animation attribute="position" from="8.5 -3 14.72" to="8.5 -1 14.72" direction="alternate" dur="2000"
+                         repeat="indefinite"dur="4000"></a-animation>
+        </a-image>
+        <!--image3-->
+
+        <a-image type="button" onclick="toggleItem1()" src ="#img3" width="2.3" height="2.6"  scale ="2.3 2.3 2.3"
+                 data-interactive="true" rotation="25 -34 0" position="-11 -4 18">
+            <a-animation attribute="scale" begin="mouseenter" dur="1000" to="4 4 4"></a-animation>
+            <a-animation attribute="scale" begin="mouseleave" dur="1000" to="2.3 2.3 2.3"></a-animation>
+
+            <a-animation attribute="position" from="-8.5 -3 14.72" to="-8.5 -5 14.7" direction="alternate" dur="2000"
+                         repeat="indefinite" dur="4000"></a-animation>
+
+        </a-image>
+        <!--image 4-->
+        <a-image src ="#img4" width="1.2" height="1.7"  scale ="4 4 4 "
+                 data-interactive="true" rotation="25 -90 0">
+            <a-animation attribute="scale" begin="mouseenter" dur="1000" to="6 6 6"></a-animation>
+            <a-animation attribute="scale" begin="mouseleave" dur="1000" to="4 4 4"></a-animation>
+
+            <a-animation attribute="position" from="-17 -5 0" to="-17 -3 0" direction="alternate" dur="2000"
+                         repeat="indefinite" dur="4000"></a-animation>
+
+        </a-image>
+        <!--image 5-->
+        <a-image src ="#img5" width="1.7" height="2.2"  scale ="3 3 3"
+                 data-interactive="true" rotation="-25 25 0">
+            <a-animation attribute="scale" begin="mouseenter" dur="1000" to="5 5 5" ></a-animation>
+            <a-animation attribute="scale" begin="mouseleave" dur="1000" to="3 3 3"></a-animation>
+            <a-animation attribute="position" from="-8.5 -3 -14.72" to="-8.5 -5 -14.72" direction="alternate" dur="2000"
+                         repeat="indefinite" dur="4000"></a-animation>
+
+        </a-image>
+        <!--image 6-->
+        <a-image src ="#img6" width="3.5" height="4.9"  scale ="1.5 1.5 2  "
+                 data-interactive="true" rotation="-25 -30 0">
+            <a-animation attribute="scale" begin="mouseenter" dur="1000" to="2.5 2.5 2.5" ></a-animation>
+            <a-animation attribute="scale" begin="mouseleave" dur="1000" to="1.5 1.5 2"></a-animation>
+            <a-animation attribute="position" from="8.5 -5 -14.72" to="8.5 -3 -14.72" direction="alternate" dur="2000"
+                         repeat="indefinite" dur="4000"></a-animation>
+
+        </a-image>
+
+
+    </a-entity>
+
+
+    <!--Top row -->
+    <a-entity layout="type: circle; radius: 17" position="0 4 0">
+
+        <!--image 7-->
+        <a-image src ="#img7" width="1.6" height="2.2" scale ="3 3 3 "
+                 data-interactive="true" rotation="-25 90 0">
+            <a-animation attribute="scale" begin="mouseenter" dur="1000" to="5 5 5" ></a-animation>
+            <a-animation attribute="scale" begin="mouseleave" dur="1000" to="3 3 3"></a-animation>
+            <a-animation attribute="position" from="17 3 0" to="17 5 0" direction="alternate" dur="2000"
+                         repeat="indefinite" dur="4000"></a-animation>
+
+        </a-image>
+
+        <!-- image 8-->
+        <a-image src ="#img8" width="5.2" height="6" scale ="1 1 1 "
+                 data-interactive="true" rotation="-25 30 0">
+            <a-animation attribute="scale" begin="mouseenter" dur="1000" to="2 2 2"></a-animation>
+            <a-animation attribute="scale" begin="mouseleave" dur="1000" to="1 1 1.3"></a-animation>
+
+            <a-animation attribute="position" from="8.5 3 14.72" to="8.5 1 14.72" direction="alternate" dur="2000"
+                         repeat="indefinite" dur="4000"></a-animation>
+
+        </a-image>
+
+        <!-- image 9-->
+        <a-image src ="#img9" width="3.4" height="4.8" scale ="2 2 2 "
+                 data-interactive="true" rotation="-25 -34 0">
+            <a-animation attribute="scale" begin="mouseenter" dur="1000" to="3 3 3 "></a-animation>
+            <a-animation attribute="scale" begin="mouseleave" dur="1000" to="2 2 2"></a-animation>
+
+            <a-animation attribute="position" from="-8.5 3 14.72" to="-8.5 5 14.7" direction="alternate" dur="2000"
+                         repeat="indefinite" dur="4000"></a-animation>
+
+        </a-image>
+
+        <!-- image 10-->
+        <a-image src ="#img10" width="1.6" height="2" scale ="4 4 4 "
+                 data-interactive="true" rotation="25 90 0">
+            <a-animation attribute="scale" begin="mouseenter" dur="1000" to="6 6 6"></a-animation>
+            <a-animation attribute="scale" begin="mouseleave" dur="1000" to="3.5 3.5 3.5"></a-animation>
+
+            <a-animation attribute="position" from="-17 4.5 0" to="-17 2.5 0" direction="alternate" dur="2000"
+                         repeat="indefinite" dur="4000"></a-animation>
+
+        </a-image>
+        <!--image 11-->
+        <a-image src ="#img11" width="1.2" height="1.8" scale ="3 3 3 "
+                 data-interactive="true" rotation="25 25 0">
+            <a-animation attribute="scale" begin="mouseenter" dur="1000" to="5 5 5" ></a-animation>
+            <a-animation attribute="scale" begin="mouseleave" dur="1000" to="3 3 3"></a-animation>
+            <a-animation attribute="position" from="-8.5 2 -14.72" to="-8.5 4 -14.72" direction="alternate" dur="2000"
+                         repeat="indefinite" dur="4000"></a-animation>
+
+        </a-image>
+        <!--image 12-->
+        <a-image src ="#img12" width="3.4" height="3.2" scale ="2 2 2 "
+                 data-interactive="true" rotation="25 -35 0">
+            <a-animation attribute="scale" begin="mouseenter" dur="1000" to="4 4 4" ></a-animation>
+            <a-animation attribute="scale" begin="mouseleave" dur="1000" to="2 2 2"></a-animation>
+            <a-animation attribute="position" from="8.5 6 -14.72" to="8.5 4 -14.72" direction="alternate" dur="2000"
+                         repeat="indefinite" dur="4000"></a-animation>
+
+        </a-image>
+
+
+    </a-entity>
+
+
+
+    <a-camera position="0 0 0" look-controls>
+        <a-cursor color="#4CC3D9" fuse="false" timeout="10"
+                  cursor-feedback dur="10"></a-cursor>
+        <a-image id="OUTOFSTOCK2" src=img/Otheritems.png geometry="primitive: plane; height: 1; width: 2" position="0 0 -1"
+                 material="color: gray; opacity: 1" visible="false"> </a-image>
+        <a-image src=img/instruct.png geometry="primitive: plane; height: 0.25; width: 0.5" position="-1.2 -0.6 -1"
+                 material="color: gray; opacity: 1" ></a-image>
+    </a-camera>
+</a-scene>
+
+<!--
+<canvas id="inputCanvas" width="320" height="240" style="display:none"></canvas>
+-->
+
+<video id="inputVideo" autoplay loop></video>
+
+<div class="coords">
+</div>
+
+<script type="text/javascript">
+
+    var vid = document.querySelector('#inputVideo');
+    cameraSource.start({
+        videoElement: vid,
+        callback: function() {
+            console.log('videoooo')
+        }
+    });
+
+</script>
+</div>
+</body>
+</html>

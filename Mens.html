@@ -1,0 +1,641 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ShopWalk PlazmaLab 3D store</title>
+    <meta name="description" content="ShopWalk PlazmaLab 3D store">
+    <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
+
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="js/aframe-animation-component.min.js"></script>
+    <script src="js/aframe-ui-components.min.js"></script>
+    <script src="js/aframe-event-set-component.min.js"></script>
+    <script src="js/aframe-text-geometry-component.min.js"></script>
+    <script src="js/aframe-layout-component.min.js"></script>
+
+    <script src="sw-load.js" data-service-worker="sw.js" data-service-worker-scope="./"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase-app.js"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-98212854-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    <script>
+        var m = document.getElementById('modal');
+        var b = document.getElementById('openIframe');
+        var i = document.getElementById('iframeid');
+        var x = document.getElementById('closebtn');
+
+        x.addEventListener("click",function(){
+            m.style.display = "none"
+        })
+        b.addEventListener("click",function(){
+            console.log('dsadas')
+            i.src = "http://test.com"
+            m.style.display = "block";
+
+        })
+    </script>
+    <!--This cript toggles visibility of a div class-->
+
+    <!--this script toggles u rl open in popup window.open-->
+    <script> function toggleItem1(){
+    window.open("https://www.plazmalab.com/product-22287-QX101_Green.aspx", "", "width=600,height=300")
+    }
+    </script>
+
+    <script> function toggleItem2(){
+        window.open("https://www.plazmalab.com/product-22286-QX101_Blue.aspx", "", "width=600,height=300")
+    }
+    </script>
+
+    <script> function toggleItem3(){
+        window.open("https://www.plazmalab.com/product-22605-FP08_Grey.aspx", "", "width=600,height=300")
+    }
+    </script>
+
+    <script> function toggleItem4(){
+        window.open("https://www.plazmalab.com/product-22637-FP02_Grey.aspx", "", "width=600,height=300")
+    }
+    </script>
+
+    <script> function toggleItem5(){
+        window.open("https://www.plazmalab.com/product-23094-Akasi_Mid_Grey_.aspx", "", "width=600,height=300")
+    }
+    </script>
+
+    <script> function toggleItem6(){
+        window.open("https://www.plazmalab.com/product-22098-QX104_1.aspx", "", "width=600,height=300")
+    }
+    </script>
+
+    <script> function toggleItem7(){
+        window.open("https://www.plazmalab.com/product-22100-QX101_1.aspx", "", "width=600,height=300")
+    }
+    </script>
+
+    <script> function toggleItem8(){
+        window.open("https://www.plazmalab.com/product-23356-QZ123_Black.aspx", "", "width=600,height=300")
+    }
+    </script>
+
+    <script> function toggleItem9(){
+    window.open("https://www.plazmalab.com/product-23541-Afrospace_Melange_.aspx", "", "width=600,height=300")
+}
+</script>
+
+    <script> function toggleItem10(){
+        window.open("https://www.plazmalab.com/product-23535-Totalex_Black_.aspx", "", "width=600,height=300")
+    }
+    </script>
+
+    <script> function toggleItem11(){
+        window.open("https://www.plazmalab.com/product-23533-Kensei_Black_.aspx", "", "width=600,height=300")
+    }
+    </script>
+
+    <script> function toggleItem12(){
+        window.open("https://www.plazmalab.com/product-23537-Master_Mind_Dirty_.aspx", "", "width=600,height=300")
+    }
+    </script>
+
+    <script> function toggleItem13(){
+        window.open("https://www.plazmalab.com/product-23531-City_Steps_Sand_.aspx", "", "width=600,height=300")
+    }
+    </script>
+
+    <script> function toggleItem14(){
+        window.open("https://www.plazmalab.com/product-23515-Discharge_Black_.aspx", "", "width=600,height=300")
+    }
+    </script>
+
+    <script> function toggleItem15(){
+        window.open("https://www.plazmalab.com/product-23550-Lucid_Dream_Dark_Blue_.aspx", "", "width=600,height=300")
+    }
+    </script>
+
+    <script> function toggleItem16(){
+        window.open("https://www.plazmalab.com/product-23525-Twizy_Black_.aspx", "", "width=600,height=300")
+    }
+    </script>
+
+    <script> function toggleItem17(){
+        window.open("https://www.plazmalab.com/product-23465-RVRZ_Ice_Melange_.aspx", "", "width=600,height=300")
+    }
+    </script>
+
+    <script> function toggleItem18(){
+        window.open("https://www.plazmalab.com/product-23498-Yanshu_Brown_.aspx", "", "width=600,height=300")
+    }
+    </script>
+
+    <script> function toggleItem19(){
+        window.open("https://www.plazmalab.com/product-23496-Kosta_Grey_.aspx", "", "width=600,height=300")
+    }
+    </script>
+
+    <script> function toggleItem20(){
+        window.open("https://www.plazmalab.com/product-23464-Kormoran_Moka_.aspx", "", "width=600,height=300")
+    }
+    </script>
+
+    <script> function toggleItem21(){
+        window.open("https://www.plazmalab.com/product-23414-Buckles_Black_.aspx", "", "width=600,height=300")
+    }
+    </script>
+
+    <script> function toggleItem22(){
+        window.open("https://www.plazmalab.com/product-23412-Ritz_Rock_.aspx", "", "width=600,height=300")
+    }
+    </script>
+
+    <script> function toggleItem23(){
+        window.open("https://www.plazmalab.com/product-23487-Dragon_Feathers_Blue_.aspx", "", "width=600,height=300")
+    }
+    </script>
+
+    <script> function toggleItem24(){
+        window.open("https://www.plazmalab.com/product-23478-Lappi_Rock_.aspx", "", "width=600,height=300")
+    }
+    </script>
+
+    <!--this script toggles the chat window on and off§-->
+    <script>
+        function toggleChat() {
+            // get the chat
+            var myChat = document.getElementById('content');
+
+            // get the current value of the chat's display property
+            var displaySetting = myChat.style.display;
+
+            // also get the chat button, so we can change what it says
+            var chatButton = document.getElementById('button1');
+
+            // now toggle the chat and the button text, depending on current state
+            if (displaySetting == 'block') {
+                // chat is visible. hide it
+                myChat.style.display = 'none';
+                // change button text
+                chatButton.innerHTML = 'Show chat';
+            }
+            else {
+                // clock is hidden. show it
+                myChat.style.display = 'block';
+                // change button text
+                chatButton.innerHTML = 'Hide chat';
+            }
+        }  </script>
+    <!--
+        <style>
+            html, body { background: #000; }
+            a-scene { transition: 0.2s opacity ease-in-out, 0.2s visibility ease-in-out; }
+            a-scene:not([data-is-loaded="true"]) { opacity: 0; pointer-events: none; transition: none; visibility: visible; }
+            a-scene[data-is-loaded="true"] { opacity: 1; pointer-events: auto; visibility: visible; }
+        </style>
+    -->
+    <style>
+        .button {
+            Position: absolute;
+            top: 88%;
+            left: 80%;
+            background-color: #555555; /* Green */
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .button1 {
+            background-color: white;
+            color: black;
+            border: 2px solid #555555;
+            z-index: 1;
+        }
+
+        .button1:hover {
+            background-color: #555555;
+            color: white;
+        }
+        div#content {
+            position: absolute;
+            top: 20%;
+            left: 70%;
+            bottom: 25px;
+            min-width: 50px;
+            overflow: hidden;
+            margin-top: -10%;
+            margin-bottom: 10%;
+            margin-right: 5%;
+            width: 30%;
+            background: black;
+            z-index: 1;
+            display: none;
+
+        }
+
+        div#content iframe {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+
+        }
+        div#buyItem1{
+            position: absolute;
+            top: 20%;
+            bottom: 20%;
+            left: 20%;
+            right: 0;
+            z-index: 1000;
+            display: block;
+            visibility: visible;
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+<button onclick="toggleChat()" class="button button1">Chat</button>
+
+<div id="content">
+    <iframe src="web-start/index.html" name="frame2" id="frame2"
+            frameborder="0" marginwidth="0" marginheight="0"
+            scrolling="auto" onload="" allowtransparency="false"></iframe>
+</div>
+
+<!--<div id="buyItem1">-->
+<!--<embed src ="https://www.plazmalab.com/product-23137-Sacred_Geo_poster.aspx" width="80%%" height="60%%" />-->
+<!--<iframe id="framed" src="https://www.plazmalab.com/product-23137-Sacred_Geo_poster.aspx#Main_productPanel1"></iframe>-->
+<!--</div>-->
+<div id="myEmbededScene2" class="scene2">
+
+    <a-scene>
+        <assets>
+            <img id="img1" src="https://www.plazmalab.com/components/img.aspx?img=images\qx101-3-1_450x540.jpg">
+            <img id="img2" src="https://www.plazmalab.com/components/img.aspx?img=images\qx101-2-1_450x540.jpg">
+            <img id="img3" src="https://www.plazmalab.com/components/img.aspx?img=images\fp08-grey01(1).jpg">
+            <img id="img4" src="https://www.plazmalab.com/components/img.aspx?img=images\FP02%20front%20grey.jpg">
+            <img id="img5" src="https://www.plazmalab.com/components/img.aspx?img=images\1_1(8).jpg">
+            <img id="img6" src="https://www.plazmalab.com/components/img.aspx?img=images\side(11).jpg">
+            <img id="img7" src="https://www.plazmalab.com/components/img.aspx?img=images\qx101-1-1_450x540%20BIG.jpg">
+            <img id="img8" src="https://www.plazmalab.com/components/img.aspx?img=images\3(50).jpg">
+
+            <img id="img9" src="https://www.plazmalab.com/components/img.aspx?img=images\afrospace%20melange%203.jpg">
+            <img id="img10" src="https://www.plazmalab.com/components/img.aspx?img=images\Totalex%20black%202.jpg">
+            <img id="img11" src="https://www.plazmalab.com/components/img.aspx?img=images\kensei%20black02.jpg">
+            <img id="img12" src="https://www.plazmalab.com/components/img.aspx?img=images\master%20mind%20dirty%203.jpg">
+            <img id="img13" src="https://www.plazmalab.com/components/img.aspx?img=images\cityscape%20sand01.jpg">
+            <img id="img14" src="https://www.plazmalab.com/components/img.aspx?img=images\front%20black%202.jpg">
+            <img id="img15" src="https://www.plazmalab.com/components/img.aspx?img=images\lucid%20dream%20dark%20blue%205.jpg">
+            <img id="img16" src="https://www.plazmalab.com/components/img.aspx?img=images\twizy%20black02.jpg">
+
+            <img id="img17" src="https://www.plazmalab.com/components/img.aspx?img=images\Rvrz_ice_mel_front_02.jpg">
+            <img id="img18" src="https://www.plazmalab.com/components/img.aspx?img=images\Yanshu_brown_front.jpg">
+            <img id="img19" src="https://www.plazmalab.com/components/img.aspx?img=images\kosta%20grey2.jpg">
+            <img id="img20" src="https://www.plazmalab.com/components/img.aspx?img=images\Kormoran_moka_side(2).jpg">
+            <img id="img21" src="https://www.plazmalab.com/components/img.aspx?img=images\Buackels_black_side.jpg">
+            <img id="img22" src="https://www.plazmalab.com/components/img.aspx?img=images\ritz-rock-01.jpg">
+            <img id="img23" src="https://www.plazmalab.com/components/img.aspx?img=images\Dragon-Feathers_Dark_blue_front_02.jpg">
+            <img id="img24" src="https://www.plazmalab.com/components/img.aspx?img=images\Lappi_rock_back.jpg">
+
+
+            <img id="ARbutton" src="img/ARbutton/Aug/AugGreenpurp.png">
+            <img id="InstoreButton" src="img/ARbutton/Aug/InstoreView.png">
+
+            <audio id="click" src="Click2.mp3"></audio>
+            <audio id="track3" src="audio/Fitz.mp3" preload="auto"></audio>
+
+
+            <a-asset-item id="dawningFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2FdawningOfANewDayRegular.typeface.json?1490305922844"></a-asset-item>
+            <a-asset-item id="exoFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2Black.typeface.json?1490305922150"></a-asset-item>
+            <a-asset-item id="exoItalicFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2BlackItalic.typeface.json?1490305922725"></a-asset-item>
+
+        </assets>
+
+        <a-sky src="img/PlazmaShip.png" rotation="0 -195 0"></a-sky>
+       <!-- sound-->
+        <a-entity id="river" geometry="primitive: plane" material="opacity: 0"
+                  position="-7 0 24" sound="src: #track3; autoplay: true"></a-entity>
+<!--Jackets-->
+        <a-entity
+            rotation="0 0 0"
+            position="-1.3 0.4 -5.69"
+            scale="0.5 0.5 0.5"
+            data-interactive="true"
+            text-geometry="value: JACKETS; font: #exoFont; bevelEnabled: false; bevelSize: 0.001; bevelThickness: 0.02; curveSegments: 20; size: 1; height: 0;"
+            material="color:#FFFAF0 ; opacity: 1; wireframe:false; metalness:1; roughness: 0; shader: flat; sphericalEnvMap: #pink;"
+            event-set__1="_event: mouseenter; material.color: #5A67A6"
+            event-set__2="_event: mouseleave; material.color: #6bf5ff"
+            event-set__3="_event: mouseenter; _target: #image2; position: 1.5 0 -2"
+            event-set__4="_event: mouseenter; _target: #image3; position: 3.0 0 -3"
+            event-set__5="_event: mouseenter; _target: #image4; position: 4.5 0 -4"
+            event-set__6="_event: mouseenter; _target: #image5; position: 6 0 -5"
+            event-set__7="_event: mouseenter; _target: #image6; position: 7.5 0 -6"
+            event-set__8="_event: mouseenter; _target: #image7; position: 9 0 -7"
+            event-set__9="_event: mouseenter; _target: #image8; position: 10.5 0 -8"
+
+            >
+        </a-entity>
+        <!--ITEMS -->
+        <a-entity  position="0 1.8 -5">
+
+            <!--image1-->
+            <a-image id="image1" type="button" onclick="toggleItem1()"
+                     position="0 0 -1"
+                     data-interactive="true"
+                     src ="#img1"
+                     data-interactive="true">
+            </a-image>
+
+            <!--image 2-->
+
+            <a-image id="image2" type="button" onclick="toggleItem2()"
+                     position="0 0 -2"
+                     data-interactive="true"
+                     geometry="primitive: plane"
+                     src ="#img2" data-interactive="true">
+            </a-image>
+
+            <!--image3-->
+
+            <a-image id="image3" type="button" onclick="toggleItem3()"
+                     position="0 0 -3"
+                     data-interactive="true"
+                     src ="#img3"
+                     data-interactive="true" >
+            </a-image>
+
+            <!--image 4-->
+
+            <a-image id="image4" type="button" onclick="toggleItem4()"
+                     src ="#img4"
+                     data-interactive="true"
+                     position="0 0 -4"
+                     data-interactive="true" >
+            </a-image>
+
+            <!--image 5-->
+
+            <a-image id="image5" type="button" onclick="toggleItem5()"
+                     src ="#img5"
+                     data-interactive="true"
+                     position="0 0 -5"
+                     data-interactive="true" >
+            </a-image>
+
+            <!--image 6-->
+
+            <a-image id="image6" type="button" onclick="toggleItem6()"
+                     src ="#img6"
+                     data-interactive="true"
+                     position="0 0 -6"
+                     data-interactive="true" >
+            </a-image>
+
+            <!--image 7-->
+
+            <a-image id="image7" type="button" onclick="toggleItem7()"
+                     src ="#img7"
+                     data-interactive="true"
+                     position="0 0 -7"
+                     data-interactive="true" >
+            </a-image>
+
+            <!--image 8-->
+
+            <a-image id="image8" type="button" onclick="toggleItem8()"
+                     src ="#img8"
+                     data-interactive="true"
+                     position="0 0 -8"
+                     data-interactive="true" >
+            </a-image>
+
+        </a-entity>
+
+         <!--T-Shirts-->
+        <a-entity
+            rotation="0 -41 0"
+            position="3.8 0.18 -5.59"
+            scale="0.5 0.5 0.5"
+            data-interactive="true"
+            text-geometry="value: T-SHIRTS; font: #exoFont; bevelEnabled: true; bevelSize: 0.001; bevelThickness: 0.02; curveSegments: 20; size: 1; height: 0;"
+            material="color:#FFFAF0 ; opacity: 1; wireframe:false; metalness:1; roughness: 0; shader: flat; sphericalEnvMap: #pink;"
+            event-set__1="_event: mouseenter; material.color: #5A67A6"
+            event-set__2="_event: mouseleave; material.color: #6bf5ff"
+            event-set__3="_event: mouseenter; _target: #image10; position: 1.5 0 -2"
+            event-set__4="_event: mouseenter; _target: #image11; position: 3.0 0 -3"
+            event-set__5="_event: mouseenter; _target: #image12; position: 4.5 0 -4"
+            event-set__6="_event: mouseenter; _target: #image13; position: 6 0 -5"
+            event-set__7="_event: mouseenter; _target: #image14; position: 7.5 0 -6"
+            event-set__8="_event: mouseenter; _target: #image15; position: 9 0 -7"
+            event-set__9="_event: mouseenter; _target: #image16; position: 10.5 0 -8"
+            >
+        </a-entity>
+        <!--ITEMS -->
+        <a-entity  rotation ="0 -42 0" position="4.3 1.8 -3.8">
+
+            <!--image9-->
+            <a-image id="image9" type="button" onclick="toggleItem9()"
+                     position="0 0 -1"
+                     data-interactive="true"
+                     src ="#img9"
+                     data-interactive="true">
+            </a-image>
+
+            <!--image 10-->
+
+            <a-image id="image10" type="button" onclick="toggleItem10()"
+                     position="0 0 -2"
+                     data-interactive="true"
+                     geometry="primitive: plane"
+                     src ="#img10" data-interactive="true">
+            </a-image>
+
+            <!--image11-->
+
+            <a-image id="image11" type="button" onclick="toggleItem11()"
+                     position="0 0 -3"
+                     data-interactive="true"
+                     src ="#img11"
+                     data-interactive="true" >
+            </a-image>
+
+            <!--image 12-->
+
+            <a-image id="image12" type="button" onclick="toggleItem12()"
+                     src ="#img12"
+                     data-interactive="true"
+                     position="0 0 -4"
+                     data-interactive="true" >
+            </a-image>
+
+            <!--image 13-->
+
+            <a-image id="image13" type="button" onclick="toggleItem13()"
+                     src ="#img13"
+                     data-interactive="true"
+                     position="0 0 -5"
+                     data-interactive="true" >
+            </a-image>
+
+            <!--image 14-->
+
+            <a-image id="image14" type="button" onclick="toggleItem14()"
+                     src ="#img14"
+                     data-interactive="true"
+                     position="0 0 -6"
+                     data-interactive="true" >
+            </a-image>
+
+            <!--image 15-->
+
+            <a-image id="image15" type="button" onclick="toggleItem15()"
+                     src ="#img15"
+                     data-interactive="true"
+                     position="0 0 -7"
+                     data-interactive="true" >
+            </a-image>
+
+            <!--image 16-->
+
+            <a-image id="image16" type="button" onclick="toggleItem16()"
+                     src ="#img16"
+                     data-interactive="true"
+                     position="0 0 -8"
+                     data-interactive="true" >
+            </a-image>
+
+        </a-entity>
+
+
+        <!--Hoodies-->
+        <a-entity
+            rotation="0 41 0"
+            position="-5.7 0.37 -3.6"
+            scale="0.5 0.5 0.5"
+            data-interactive="true"
+            text-geometry="value: HOODIES; font: #exoFont; bevelEnabled: true; bevelSize: 0.001; bevelThickness: 0.02; curveSegments: 20; size: 1; height: 0;"
+            material="color:#FFFAF0 ; opacity: 1; wireframe:false; metalness:1; roughness: 0; shader: flat; sphericalEnvMap: #pink;"
+            event-set__1="_event: mouseenter; material.color: #5A67A6"
+            event-set__2="_event: mouseleave; material.color: #6bf5ff"
+            event-set__3="_event: mouseenter; _target: #image18; position: 1.5 0 -2"
+            event-set__4="_event: mouseenter; _target: #image19; position: 3.0 0 -3"
+            event-set__5="_event: mouseenter; _target: #image20; position: 4.5 0 -4"
+            event-set__6="_event: mouseenter; _target: #image21; position: 6 0 -5"
+            event-set__7="_event: mouseenter; _target: #image22; position: 7.5 0 -6"
+            event-set__8="_event: mouseenter; _target: #image23; position: 9 0 -7"
+            event-set__9="_event: mouseenter; _target: #image24; position: 10.5 0 -8"
+
+            >
+        </a-entity>
+        <!--ITEMS -->
+        <a-entity  rotation ="0 42 0" position="-4.3 1.8 -3.8">
+
+            <!--image17-->
+            <a-image id="image17" type="button" onclick="toggleItem17()"
+                     position="0 0 -1"
+                     data-interactive="true"
+                     src ="#img17"
+                     data-interactive="true">
+            </a-image>
+
+            <!--image 18-->
+
+            <a-image id="image18" type="button" onclick="toggleItem18()"
+                     position="0 0 -2"
+                     data-interactive="true"
+                     geometry="primitive: plane"
+                     src ="#img18" data-interactive="true">
+            </a-image>
+
+            <!--image19-->
+
+            <a-image id="image19" type="button" onclick="toggleItem19()"
+                     position="0 0 -3"
+                     data-interactive="true"
+                     src ="#img19"
+                     data-interactive="true" >
+            </a-image>
+
+            <!--image 20-->
+
+            <a-image id="image20" type="button" onclick="toggleItem20()"
+                     src ="#img20"
+                     data-interactive="true"
+                     position="0 0 -4"
+                     data-interactive="true" >
+            </a-image>
+
+            <!--image 21-->
+
+            <a-image id="image21" type="button" onclick="toggleItem21()"
+                     src ="#img21"
+                     data-interactive="true"
+                     position="0 0 -5"
+                     data-interactive="true" >
+            </a-image>
+
+            <!--image 22-->
+
+            <a-image id="image22" type="button" onclick="toggleItem22()"
+                     src ="#img22"
+                     data-interactive="true"
+                     position="0 0 -6"
+                     data-interactive="true" >
+            </a-image>
+
+            <!--image 23-->
+
+            <a-image id="image23" type="button" onclick="toggleItem23()"
+                     src ="#img23"
+                     data-interactive="true"
+                     position="0 0 -7"
+                     data-interactive="true" >
+            </a-image>
+
+            <!--image 24-->
+
+            <a-image id="image24" type="button" onclick="toggleItem24()"
+                     src ="#img24"
+                     data-interactive="true"
+                     position="0 0 -8"
+                     data-interactive="true" >
+            </a-image>
+
+        </a-entity>
+
+        <a-camera position="0 0 0" look-controls>
+            <a-cursor color="#4CC3D9" fuse="false" timeout="10"
+                      cursor-feedback dur="10"></a-cursor>
+            <a-image id="OUTOFSTOCK2" src=img/Otheritems.png geometry="primitive: plane; height: 1; width: 2" position="0 0 -1"
+                     material="color: gray; opacity: 1" visible="false"> </a-image>
+            <a-image src=img/instruct.png geometry="primitive: plane; height: 0.25; width: 0.5" position="-1.2 -0.6 -1"
+                     material="color: gray; opacity: 1" ></a-image>
+        </a-camera>
+
+    </a-scene>
+
+</div>
+
+</body>
+</html>
